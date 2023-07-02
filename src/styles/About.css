@@ -1,0 +1,181 @@
+body {
+  background: rgb(11, 31, 80);
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  background: radial-gradient(
+    circle,
+    rgba(11, 31, 80, 1) 4%,
+    rgba(0, 4, 13, 1) 47%,
+    rgba(0, 0, 0, 1) 100%,
+    rgba(0, 7, 24, 0) 100%
+  );
+}
+
+.orbitals {
+  position: absolute;
+  width: 100%;
+  top: 50%;
+  left: 50%;
+  max-width: 700px;
+  padding-top: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  transform: translate(-50%, -50%);
+}
+
+@media (min-width: 700px) {
+  .orbitals {
+    padding-top: 700px;
+  }
+}
+
+.system__orbit {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  border: 1px dashed rgba(255, 255, 255, 0.3);
+  border-radius: 100%;
+  transform: translate(-50%, -50%);
+  animation: spin infinite linear both;
+}
+
+.system__orbit:nth-child(1) {
+  width: 10%;
+  height: 10%;
+}
+
+.system__orbit:nth-child(2) {
+  width: 40%;
+  height: 40%;
+}
+
+.system__orbit:nth-child(3) {
+  width: 74%;
+  height: 74%;
+}
+
+.system__orbit:nth-child(4) {
+  width: 100%;
+  height: 100%;
+}
+
+.system__orbit--game {
+  animation-duration: 10.6s;
+}
+
+.system__orbit--game2 {
+  animation-duration: 9.1s;
+}
+
+.system__orbit--game3 {
+  animation-duration: 21.8s;
+}
+
+.system__game {
+  position: absolute;
+  top: 50%;
+  left: -12px;
+  width: 25px;
+  height: 25px;
+  border-radius: 100%;
+  transform: translateY(-50%);
+}
+
+.system__icon {
+  width: 100%;
+  height: 100%;
+}
+
+@keyframes spin {
+  from {
+    transform: translate(-50%, -50%);
+  }
+  to {
+    transform: translate(-50%, -50%) rotate(-360deg);
+  }
+}
+
+.contentTitle {
+  display: inline;
+  color: #fff;
+}
+
+.contentText {
+  font-size: 16px;
+  color: #fff4f4;
+  margin-bottom: 20px;
+}
+
+.visitButton {
+  background-color: #423f3e;
+  color: #fff;
+  padding: 10px 20px;
+  font-size: 16px;
+  border: none;
+  border-radius: 30px;
+  display: block;
+  margin: 0 auto;
+  position: relative;
+  overflow: hidden;
+  cursor: pointer;
+}
+
+.visitButton::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 100%;
+  transform: translate(-50%, -50%);
+  width: 10px;
+  height: 10px;
+  background-color: transparent;
+  border-top: 2px solid #fff;
+  border-right: 2px solid #fff;
+  transition: transform 0.3s ease, border-color 0.3s ease; /* Added transition for border-color */
+  cursor: pointer;
+}
+
+.visitButton:hover::before {
+  transform: translate(-50%, -50%) rotate(45deg);
+  border-color: #28ffbf; /* Updated border color for hover state */
+}
+
+.visitButton::after {
+  content: "Shop";
+  position: absolute;
+  top: 50%;
+  left: 100%;
+  transform: translate(-50%, -50%);
+  color: #fff;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.visitButton:hover::after {
+  opacity: 1;
+}
+
+.visitButton:hover {
+  background-color: #28ffbf; /* Updated background color for hover state */
+  color: #423f3e; /* Updated text color for hover state */
+}
+.details {
+  color: #28ffbf;
+}
+
+#new {
+  animation: none;
+}
+
+
+.system__orbit--game .contentTitle,
+.system__orbit--game .contentText,
+.system__orbit--game .visitButton {
+  animation: none;
+}
+.system__orbit--game {
+  animation: none;
+}
